@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-            <p>nayimh2015@gmil.com</p>
-        </div>
+        <footer>
+            <h2>nayimh2015@gmil.com</h2>
+        </footer>
     );
 };
 

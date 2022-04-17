@@ -1,10 +1,9 @@
 import React from 'react';
-import './Services.css';
 
 const Services = () => {
     return (
         <div>
-            <h1>This services</h1>
+            <h2>This is Services</h2>
         </div>
     );
 };
