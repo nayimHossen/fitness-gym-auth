@@ -4,9 +4,9 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <>
+        <div className='mt-3'>
             <Banner />
-        </>
+        </div>
     );
 };
 
