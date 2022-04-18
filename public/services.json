@@ -1,23 +1,23 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
+        "name": "Weight Training exercises help you strengthen",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "description": ", keep you in shape and improve your posture. This section has ample state of the art improved single stations gyms coupled with host of additional free weights and the most needed guidance to help you out",
+        "img": "https://i.ibb.co/Lx1hC0b/services3.png"
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
+        "name": "Special Attention to an individuals",
         "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "description": "I have Professionally Certified and Qualified Personal Trainers who can pay Special Attention to an individuals’ need and expectation",
+        "img": "https://i.ibb.co/QkWr8FY/services2.png"
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
+        "name": "workout to re-energize yourself",
         "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "description": "With the help and guidance of our Expert Team of Trainers and Nutritionists, we provide complimentary Diet Counseling sessions to all our customers in order to help them achieve their desired results.  Eating Healthy is the best way to stay Fit and Young.",
+        "img": "https://i.ibb.co/Nxrm077/services1.png"
     }
 ]

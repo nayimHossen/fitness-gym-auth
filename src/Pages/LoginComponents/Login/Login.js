@@ -6,6 +6,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import Loading from '../../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import loginImg from '../../../images/work-1.jpg';
 
 
 const Login = () => {
@@ -58,8 +59,7 @@ const Login = () => {
             <div className="flex-1 h-full max-w-4xl mx-auto bg-white rounded-lg shadow-xl">
                 <div className="flex flex-col md:flex-row">
                     <div className="h-32 md:h-auto md:w-1/2">
-                        <img className="object-cover w-full h-full" src="https://source.unsplash.com/user/erondu/1600x900"
-                            alt="img" />
+                        <img className="object-cover w-full h-full" src={loginImg} alt="img" />
                     </div>
                     <div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                         <div className="w-full">

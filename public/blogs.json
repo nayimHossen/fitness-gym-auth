@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "In authentication process, the identity of users are checked for providing the access to the system.",
+        "question": "Difference between authorization and authentication",
+        "ans": "Authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access to. The situation is like that of an airline that needs to determine which people can come on board"
+    },
+    {
+        "id": 2,
+        "title": "Why are you using firebase? What other options do you have to implement authentication?",
+        "question": "Difference between authorization and authentication",
+        "ans": "Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more. Server-side technologies nowadays can handle pretty much as long as it is concerned with the cloud, like saving/reading the files, data-security, building a huge database, sending push notifications, as I said, pretty much everything, you just name it."
+    },
+    {
+        "id": 3,
+        "title": "What other services does firebase provide other than authentication? ",
+        "ans": "",
+        "ans": "Firebase is a toolkit and infrastructure that aims at supporting the process of building better applications and growing a successful business. This technique continues to innovate and dominate the BaaS (Backend as a Service) market. Along with the time, it has grown so much that it has become a key component of Google’s mobile strategy. It was bought by Google and now it is being constantly improved in order to make the user experience much more convenient and productive."
+    }
+]

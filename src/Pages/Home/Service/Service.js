@@ -10,11 +10,11 @@ const Service = ({ service }) => {
     };
 
     return (
-        <div className='border-2 p-6 rounded text-center'>
-            <img className='w-100' src={img} alt="" />
-            <h2>This is service: {name}</h2>
-            <p>Price: {price}</p>
-            <p><small>{description}</small></p>
+        <div className='border-2 p-4 rounded text-center my-4'>
+            <img className='w-100 mb-3' src={img} alt="" />
+            <h5>This is service: {name}</h5>
+            <p>{description}</p>
+            <h4>Price: ${price}</h4>
             <button onClick={() => navigateToCheckout(id)} className='bg-red-600 p-2 rounded text-white'>Checkout</button>
         </div>
     );
