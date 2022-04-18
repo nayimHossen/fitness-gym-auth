@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+
 
 const Login = () => {
     const [
@@ -10,11 +11,13 @@ const Login = () => {
         user,
         error
     ] = useSignInWithEmailAndPassword(auth);
-    let errorElement;
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
+    let errorElement;
 
     if (error) {
         errorElement = <p>{error.message}</p>
@@ -31,6 +34,10 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
+    };
+    const passwordReset = async () => {
+        await sendPasswordResetEmail(emailRef.current.value);
+        alert("sent email")
     }
 
     return (
@@ -67,7 +74,6 @@ const Login = () => {
                                         className="w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600"
                                         placeholder="Password" type="password" required />
                                 </div>
-
                                 <input
                                     className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
                                     type="submit" value="Login" />
@@ -77,6 +83,11 @@ const Login = () => {
                                 <p className="text-sm">If you first on this website<Link to="/register"
                                     className="text-blue-600 hover:underline">Create an account.</Link></p>
                             </div>
+                            <div className="mt-4 text-center">
+                                <p className="text-sm">Forget Password ?<Link to="/register"
+                                    className="text-blue-600 hover:underline" onClick={passwordReset}>Reset Password</Link></p>
+                            </div>
+
                             {errorElement}
                             <GoogleLogin />
                         </div>
