@@ -4,7 +4,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <footer className='bg-dark py-4 text-white mt-5'>
+        <footer className='bg-dark py-4 text-white'>
             <p className='text-center'>nayimh2015@gmil.com {year}</p>
         </footer>
     );

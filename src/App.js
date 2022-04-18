@@ -5,12 +5,12 @@ import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import Checkout from './Pages/Checkout/Checkout';
 import Home from './Pages/Home/Home/Home';
+import Login from './Pages/LoginComponents/Login/Login';
+import Register from './Pages/LoginComponents/Register/Register';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
-import Login from '../src/Pages/Login/Login';
-import Register from './Pages/Register/Register';
-import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import RequireAuth from './Pages/LoginComponents/RequireAuth/RequireAuth';
 
 function App() {
   return (
