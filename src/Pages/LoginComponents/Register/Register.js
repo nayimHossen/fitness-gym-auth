@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
-import { async } from '@firebase/util';
+import Loading from '../../Shared/Loading/Loading';
 
 
 
@@ -12,6 +12,7 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
+        loading,
         error
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -19,18 +20,17 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    if (error) {
-        errorElement = <p>{error.message}</p>
-    }
-
-    if (user) {
-        console.log('user', user);
-    }
 
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
+    if (error) {
+        errorElement = <p className='text-danger'>{error.message}</p>
+    }
+    if (loading || updating) {
+        return <Loading />
+    }
     const handleRegister = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
@@ -39,10 +39,9 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        navigate('/home');
+        navigate('/login');
     };
-
-
+    console.log(user);
 
     return (
         <div className="flex items-center min-h-screen bg-gray-50">

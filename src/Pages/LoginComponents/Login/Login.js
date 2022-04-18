@@ -3,12 +3,16 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
+        loading,
         error
     ] = useSignInWithEmailAndPassword(auth);
 
@@ -19,16 +23,19 @@ const Login = () => {
     let from = location.state?.from?.pathname || '/';
     let errorElement;
 
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+
+    if (loading || sending) {
+        return <Loading />
+    }
+
     if (error) {
-        errorElement = <p>{error.message}</p>
+        errorElement = <p className='text-danger'>{error.message}</p>
     }
     if (user) {
         navigate(from, { replace: true });
     };
-
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -36,8 +43,14 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
     const passwordReset = async () => {
-        await sendPasswordResetEmail(emailRef.current.value);
-        alert("sent email")
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast("sent email")
+        } else {
+            toast('place enter your email')
+        }
+
     }
 
     return (
@@ -84,10 +97,10 @@ const Login = () => {
                                     className="text-blue-600 hover:underline">Create an account.</Link></p>
                             </div>
                             <div className="mt-4 text-center">
-                                <p className="text-sm">Forget Password ?<Link to="/register"
-                                    className="text-blue-600 hover:underline" onClick={passwordReset}>Reset Password</Link></p>
+                                <p className="text-sm">Forget Password ?<button
+                                    className="btn btn-Link text-blue-600 hover:underline" onClick={passwordReset}>Reset Password</button></p>
                             </div>
-
+                            <ToastContainer />
                             {errorElement}
                             <GoogleLogin />
                         </div>

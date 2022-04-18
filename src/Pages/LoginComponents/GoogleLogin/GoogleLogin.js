@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 const GoogleLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -13,7 +14,9 @@ const GoogleLogin = () => {
     if (error) {
         errorElement = <p className='text-red-600'>Error: {error.message}</p>
     }
-
+    if (loading) {
+        return <Loading />
+    }
     if (user) {
         navigate('/home');
     }
